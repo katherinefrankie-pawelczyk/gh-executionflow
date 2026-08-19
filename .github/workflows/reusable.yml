@@ -1,0 +1,16 @@
+name: Reusable Deploy
+on: workflow_call:
+  inputs:
+    deploy_env:
+      required: true
+      type: string
+      description: "The environment to deploy to (e.g., staging, production)"
+  secrets:
+    DEPLOYMENT_TOKEN:
+      required: true
+jobs: 
+    deploy:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Output information
+            run: echo "Deploying & uploading..."
